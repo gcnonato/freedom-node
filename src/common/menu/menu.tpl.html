@@ -1,0 +1,29 @@
+<div>
+  <h4 class="muted">Freedom! Dashboard </h4>
+  <ul class="nav nav-tabs nav-stacked nav-custom-freedom">
+    <li ui-route="/overview" ng-class="{active:$uiRoute}">
+      <a href="#/overview">
+        <i class="icon-home"></i>
+        Overview
+      </a>
+    </li>
+    <li ui-route="/profile" ng-class="{active:$uiRoute}">
+      <a href="#/profile">
+        <i class="icon-book"></i>
+        Profile
+      </a>
+    </li>
+    <li ui-route="/about" ng-class="{active:$uiRoute}">
+      <a href="#/about">
+        <i class="icon-info-sign"></i>
+        About
+      </a>
+    </li>
+    <li>
+      <a href="">
+        <i class="icon-book"></i>
+        {{allUsers}}
+      </a>
+    </li>
+  </ul>
+</div>

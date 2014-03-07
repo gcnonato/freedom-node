@@ -12,7 +12,8 @@
  * The dependencies block here is also where component dependencies should be
  * specified, as shown below.
  */
-angular.module( 'freedomDashboard.home', [
+angular.module( 'freedomDashboard.profile', [
+  'restangular',
   'ui.state',
   'plusOne'
 ])
@@ -23,23 +24,26 @@ angular.module( 'freedomDashboard.home', [
  * this way makes each module more "self-contained".
  */
 .config(function config( $stateProvider ) {
-  $stateProvider.state( 'home', {
-    url: '/overview',
+  $stateProvider.state( 'profile', {
+    url: '/profile',
     views: {
       "main": {
-        controller: 'HomeCtrl',
-        templateUrl: 'home/home.tpl.html'
+        controller: 'ProfileCtrl',
+        templateUrl: 'profile/profile.tpl.html'
       }
     },
-    data:{ pageTitle: 'Home' }
+    data:{ pageTitle: 'Profile' }
   });
+
 })
 
 /**
  * And of course we define a controller for our route.
  */
-.controller( 'HomeCtrl', function HomeController( $scope ) {
-  // console.log("Home");
+.controller( 'ProfileCtrl', function HomeController( $scope, Restangular, $http) { 
+      var User = Restangular.all('user');
+      $scope.allUsers = User.getList(); // GET /users
+      console.log($scope.allUsers);
 })
 
 ;
