@@ -42,8 +42,21 @@ angular.module( 'freedomDashboard.profile', [
  */
 .controller( 'ProfileCtrl', function HomeController( $scope, Restangular, $http) { 
       var User = Restangular.all('user');
-      $scope.allUsers = User.getList(); // GET /users
+      $scope.allUsers = User.getList();
       console.log($scope.allUsers);
+
+      $scope.badges = [
+        {id:1, text:'Welcome Badge', sprite:[0,0]},
+        {id:2, text:'Veteran Badge', sprite:[29,0]},
+        {id:3, text:'Mr. Uploader Badge', sprite:[58,0]},
+        {id:3, text:'Mr. Views Badge', sprite:[87,0]},
+        {id:3, text:'Voice Badge', sprite:[116,0]},
+        {id:3, text:'Epic Badge', sprite:[145,0]},
+        {id:3, text:'Thunder Badge', sprite:[0,30.5]},
+        {id:3, text:'Mr. Earner Badge', sprite:[29,30.5]},
+        {id:3, text:'Let it go Badge', sprite:[58,30.5]},
+        {id:3, text:'Troll Badge', sprite:[87,30.5]}
+      ];
 })
 
 ;
